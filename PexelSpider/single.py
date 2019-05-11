@@ -102,7 +102,7 @@ class DownloadPexelSpider:
                     content = raw.content
                     f.write(content)
                 i = i[:-11:] + "1920&h=1080"
-                with open('{}_1920.png'.format(name, w), 'wb') as f:
+                with open('{}_1920.png'.format(name), 'wb') as f:
                     raw = self.session.get(i, headers=self.headers)
                     content = raw.content
                     f.write(content)
@@ -120,64 +120,4 @@ class DownloadPexelSpider:
 
 if __name__ == '__main__':
     DownloadPexelSpider().run(10, 20)
-    # multiprocessing.freeze_support()
-    # obj = DownloadPexelSpider()
-    # p = Process(target=obj.download_image, args=())
-    # p.start()  # 向操作系统发送一个请求，操作系统会申请内存空间给，然后把父进程的数据拷贝给子进程，作为子进程的初始数据。
-    # print("父进程启动")
-    # obj.run()
-    # print("父进程启动")
-    #
-    # # 创建进程池,Pool默认为CPU核心数
-    # pp = Pool(2)
-    #    # 创建进程，放入进程池统一管理
-    # pp.apply_async(obj.run(), args=())
-    # pp.apply_async(obj.download_image(), args=())
-    # print(pp)
-    # # 进程池在调动join之前必须先调动close，调用close之后就不能再继续添加新的进程了
-    # pp.close()
-    # pp.join()
-    #
-    # print("父进程结束")
 
-    # obj.run()
-    # p = Process(target=obj.download_image())
-    # p.start()
-    # p.join()
-    # pool = multiprocessing.Pool()
-    # cpus = multiprocessing.cpu_count()
-    # for i in range(0, cpus):
-    #     result = pool.apply_async(obj.run(), args=())
-    #     result = pool.apply_async(obj.download_image(), args=())
-    # pool.close()
-    # pool.join()
-
-# #obj.run()
-# threads = []
-# t1 = threading.Thread(target=obj.run(), )
-# threads.append(t1)
-# t2 = threading.Thread(target=obj.download_image(), )
-# threads.append(t2)
-# print(threads)
-# threads[1].setDaemon(True)
-# threads[1].start()
-#
-# time.sleep(10)
-# threads[0].setDaemon(True)
-# threads[0].start()
-
-# for t in threads:
-#     t.setDaemon(True)
-#     t.start()
-# threads[0].setDaemon(True)
-# threads[0].start()
-# time.sleep(10)
-# t2 = threading.Thread(target=obj.download_image, )
-# threads.append(t2)
-# threads[1].setDaemon(True)
-# threads[1].start()
-# soup = BeautifulSoup(data, 'lxml')
-# print(soup.findAll('div'))
-# https://www.pexels.com/photo/2116222/
-# https://www.pexels.com/photos/2116222/
-# 2116222
