@@ -148,7 +148,7 @@ class DownloadPexelSpider:
                     content = raw.content
                     f.write(content)
                 i = i[:-11:] + "1920&h=1080"
-                with open('{}_1920.png'.format(name, w), 'wb') as f:
+                with open('{}_1920.png'.format(name), 'wb') as f:
                     raw = self.session.get(i, headers=self.headers)
                     content = raw.content
                     f.write(content)
